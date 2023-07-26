@@ -1,8 +1,9 @@
 groups:
-- neurodata_type_def: TetrodeSeries
-  neurodata_type_inc: ElectricalSeries
-  doc: An extension of ElectricalSeries to include the tetrode ID for each time series.
+- neurodata_type_def: DepthImageSeries
+  neurodata_type_inc: ImageSeries
+  doc: An extension of ImageSeries that includes the depth of the most distant depth
+    for reference.
   attributes:
-  - name: trode_id
-    dtype: int32
-    doc: The tetrode ID.
+  - name: distant_depth
+    dtype: float32
+    doc: The depth of the most distant depth for reference.

@@ -46,11 +46,11 @@ def set_up_nwbfile():
 class TestTetrodeSeriesConstructor(TestCase):
 
     def setUp(self):
-        """Set up an NWB file. Necessary because TetrodeSeries requires references to electrodes."""
+        """Set up an NWB file. Necessary because DepthImageSeries requires references to electrodes."""
         self.nwbfile = set_up_nwbfile()
 
     def test_constructor(self):
-        """Test that the constructor for TetrodeSeries sets values as expected."""
+        """Test that the constructor for DepthImageSeries sets values as expected."""
         all_electrodes = self.nwbfile.create_electrode_table_region(
             region=list(range(0, 10)),
             description='all the electrodes'
@@ -76,7 +76,7 @@ class TestTetrodeSeriesConstructor(TestCase):
 
 
 class TestTetrodeSeriesRoundtrip(TestCase):
-    """Simple roundtrip test for TetrodeSeries."""
+    """Simple roundtrip test for DepthImageSeries."""
 
     def setUp(self):
         self.nwbfile = set_up_nwbfile()
@@ -87,8 +87,8 @@ class TestTetrodeSeriesRoundtrip(TestCase):
 
     def test_roundtrip(self):
         """
-        Add a TetrodeSeries to an NWBFile, write it to file, read the file, and test that the TetrodeSeries from the
-        file matches the original TetrodeSeries.
+        Add a DepthImageSeries to an NWBFile, write it to file, read the file, and test that the DepthImageSeries from the
+        file matches the original DepthImageSeries.
         """
         all_electrodes = self.nwbfile.create_electrode_table_region(
             region=list(range(0, 10)),
@@ -97,7 +97,7 @@ class TestTetrodeSeriesRoundtrip(TestCase):
 
         data = np.random.rand(100, 3)
         tetrode_series = TetrodeSeries(
-            name='TetrodeSeries',
+            name='DepthImageSeries',
             description='description',
             data=data,
             rate=1000.,
@@ -112,14 +112,14 @@ class TestTetrodeSeriesRoundtrip(TestCase):
 
         with NWBHDF5IO(self.path, mode='r', load_namespaces=True) as io:
             read_nwbfile = io.read()
-            self.assertContainerEqual(tetrode_series, read_nwbfile.acquisition['TetrodeSeries'])
+            self.assertContainerEqual(tetrode_series, read_nwbfile.acquisition['DepthImageSeries'])
 
 
 class TestTetrodeSeriesRoundtripPyNWB(AcquisitionH5IOMixin, TestCase):
-    """Complex, more complete roundtrip test for TetrodeSeries using pynwb.testing infrastructure."""
+    """Complex, more complete roundtrip test for DepthImageSeries using pynwb.testing infrastructure."""
 
     def setUpContainer(self):
-        """ Return the test TetrodeSeries to read/write """
+        """ Return the test DepthImageSeries to read/write """
         self.device = Device(
             name='device_name'
         )
@@ -163,7 +163,7 @@ class TestTetrodeSeriesRoundtripPyNWB(AcquisitionH5IOMixin, TestCase):
         return tetrode_series
 
     def addContainer(self, nwbfile):
-        """Add the test TetrodeSeries and related objects to the given NWBFile."""
+        """Add the test DepthImageSeries and related objects to the given NWBFile."""
         nwbfile.add_device(self.device)
         nwbfile.add_electrode_group(self.group)
         nwbfile.set_electrode_table(self.table)

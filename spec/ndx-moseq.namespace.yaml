@@ -1,6 +1,7 @@
 namespaces:
 - author:
-  - Paul Adkisson
+  - Adkisson
+  - Paul
   contact:
   - paul.wesley.adkisson@gmail.com
   doc: Extension for MoSeq-extract output
@@ -8,6 +9,6 @@ namespaces:
   schema:
   - namespace: core
     neurodata_types:
-    - ElectricalSeries
+    - ImageSeries
   - source: ndx-moseq.extensions.yaml
   version: 0.1.0

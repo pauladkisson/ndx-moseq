@@ -12,7 +12,7 @@ def main():
         doc="""Extension for MoSeq-extract output""",
         name="""ndx-moseq""",
         version="""0.1.0""",
-        author=list(map(str.strip, """Paul Adkisson""".split(','))),
+        author=list(map(str.strip, """Adkisson, Paul""".split(','))),
         contact=list(map(str.strip, """paul.wesley.adkisson@gmail.com""".split(',')))
     )
 
@@ -22,27 +22,28 @@ def main():
     # to use your new data types.
     # all types included or used by the types specified here will also be
     # included.
-    ns_builder.include_type('ElectricalSeries', namespace='core')
+    ns_builder.include_type('ImageSeries', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
     # for more information
-    tetrode_series = NWBGroupSpec(
-        neurodata_type_def='TetrodeSeries',
-        neurodata_type_inc='ElectricalSeries',
-        doc=('An extension of ElectricalSeries to include the tetrode ID for '
-             'each time series.'),
+    depth_image_series = NWBGroupSpec(
+        neurodata_type_def='DepthImageSeries',
+        neurodata_type_inc='ImageSeries',
+        doc=(
+            'An extension of ImageSeries that includes the depth of the most distant depth for reference.'
+        ),
         attributes=[
             NWBAttributeSpec(
-                name='trode_id',
-                doc='The tetrode ID.',
-                dtype='int32'
+                name='distant_depth',
+                doc='The depth of the most distant depth for reference.',
+                dtype='float32'
             )
         ],
     )
 
     # TODO: add all of your new data types to this list
-    new_data_types = [tetrode_series]
+    new_data_types = [depth_image_series]
 
     # export the spec to yaml files in the spec folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'spec'))
