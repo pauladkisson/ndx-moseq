@@ -7,3 +7,10 @@ groups:
   - name: distant_depth
     dtype: float32
     doc: The depth of the most distant depth for reference.
+- neurodata_type_def: MoSeqExtractGroup
+  neurodata_type_inc: NWBDataInterface
+  doc: Defines a group of all the MoSeq-extract outputs.
+  attributes:
+  - name: version
+    dtype: text
+    doc: Version of moseq2-extract.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os.path
 
-from pynwb.spec import NWBNamespaceBuilder, export_spec, NWBGroupSpec, NWBAttributeSpec
+from pynwb.spec import NWBNamespaceBuilder, export_spec, NWBGroupSpec, NWBAttributeSpec, NWBDatasetSpec
 # TODO: import other spec classes as needed
 # from pynwb.spec import NWBDatasetSpec, NWBLinkSpec, NWBDtypeSpec, NWBRefSpec
 
@@ -23,6 +23,7 @@ def main():
     # all types included or used by the types specified here will also be
     # included.
     ns_builder.include_type('ImageSeries', namespace='core')
+    ns_builder.include_type('NWBDataInterface', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -41,9 +42,21 @@ def main():
             )
         ],
     )
+    moseq_extract_group = NWBGroupSpec(
+        neurodata_type_def='MoSeqExtractGroup',
+        neurodata_type_inc='NWBDataInterface',
+        doc='Defines a group of all the MoSeq-extract outputs.',
+        attributes=[
+            NWBAttributeSpec(
+                name='version',
+                doc='Version of moseq2-extract.',
+                dtype='text'
+            )
+        ],
+    )
 
     # TODO: add all of your new data types to this list
-    new_data_types = [depth_image_series]
+    new_data_types = [depth_image_series, moseq_extract_group]
 
     # export the spec to yaml files in the spec folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'spec'))
