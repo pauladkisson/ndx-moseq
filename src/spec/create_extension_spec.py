@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os.path
 
-from pynwb.spec import NWBNamespaceBuilder, export_spec, NWBGroupSpec, NWBAttributeSpec, NWBDatasetSpec
+from pynwb.spec import NWBNamespaceBuilder, export_spec, NWBGroupSpec, NWBAttributeSpec, NWBDatasetSpec, NWBLinkSpec
 # TODO: import other spec classes as needed
 # from pynwb.spec import NWBDatasetSpec, NWBLinkSpec, NWBDtypeSpec, NWBRefSpec
 
@@ -25,6 +25,7 @@ def main():
     ns_builder.include_type('ImageSeries', namespace='core')
     ns_builder.include_type('NWBDataInterface', namespace='core')
     ns_builder.include_type('GrayscaleImage', namespace='core')
+    ns_builder.include_type('Device', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -60,7 +61,14 @@ def main():
                 doc='Computed background image.',
                 neurodata_type_inc='GrayscaleImage',
             ),
-        ]
+        ],
+        links=[
+            NWBLinkSpec(
+                name='depth_camera',
+                doc='Link to the device (camera) that was used to record the original depth video.',
+                target_type='Device',
+            ),
+        ],
     )
 
     # TODO: add all of your new data types to this list

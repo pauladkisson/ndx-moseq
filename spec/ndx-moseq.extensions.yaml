@@ -18,3 +18,7 @@ groups:
   - name: background
     neurodata_type_inc: GrayscaleImage
     doc: Computed background image.
+  links:
+  - name: depth_camera
+    target_type: Device
+    doc: Link to the device (camera) that was used to record the original depth video.
