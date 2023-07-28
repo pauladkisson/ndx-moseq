@@ -14,3 +14,7 @@ groups:
   - name: version
     dtype: text
     doc: Version of moseq2-extract.
+  datasets:
+  - name: background
+    neurodata_type_inc: GrayscaleImage
+    doc: Computed background image.

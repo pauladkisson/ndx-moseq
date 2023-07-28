@@ -24,3 +24,4 @@ load_namespaces(ndx_moseq_specpath)
 # TODO: import your classes here or define your class using get_class to make
 # them accessible at the package level
 DepthImageSeries = get_class('DepthImageSeries', 'ndx-moseq')
+MoSeqExtractGroup = get_class('MoSeqExtractGroup', 'ndx-moseq')

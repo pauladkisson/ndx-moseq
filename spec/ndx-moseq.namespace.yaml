@@ -11,5 +11,6 @@ namespaces:
     neurodata_types:
     - ImageSeries
     - NWBDataInterface
+    - GrayscaleImage
   - source: ndx-moseq.extensions.yaml
   version: 0.1.0

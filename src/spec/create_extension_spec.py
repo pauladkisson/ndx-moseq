@@ -24,6 +24,7 @@ def main():
     # included.
     ns_builder.include_type('ImageSeries', namespace='core')
     ns_builder.include_type('NWBDataInterface', namespace='core')
+    ns_builder.include_type('GrayscaleImage', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -53,6 +54,13 @@ def main():
                 dtype='text'
             )
         ],
+        datasets=[
+            NWBDatasetSpec(
+                name='background',
+                doc='Computed background image.',
+                neurodata_type_inc='GrayscaleImage',
+            ),
+        ]
     )
 
     # TODO: add all of your new data types to this list
