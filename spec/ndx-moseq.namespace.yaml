@@ -13,5 +13,7 @@ namespaces:
     - NWBDataInterface
     - GrayscaleImage
     - Device
+    - ImageMaskSeries
+    - TimeSeries
   - source: ndx-moseq.extensions.yaml
   version: 0.1.0

@@ -18,6 +18,19 @@ groups:
   - name: background
     neurodata_type_inc: GrayscaleImage
     doc: Computed background image.
+  - name: roi
+    neurodata_type_inc: GrayscaleImage
+    doc: Region of interest in the raw depth video.
+  groups:
+  - name: flipped_series
+    neurodata_type_inc: TimeSeries
+    doc: Boolean array indicating whether the image was flipped left/right.
+  - name: processed_depth_video
+    neurodata_type_inc: DepthImageSeries
+    doc: Extracted depth video with aligned animal.
+  - name: loglikelihood_video
+    neurodata_type_inc: ImageMaskSeries
+    doc: Log-likelihood that the animal was detected for each pixel.
   links:
   - name: depth_camera
     target_type: Device

@@ -26,6 +26,8 @@ def main():
     ns_builder.include_type('NWBDataInterface', namespace='core')
     ns_builder.include_type('GrayscaleImage', namespace='core')
     ns_builder.include_type('Device', namespace='core')
+    ns_builder.include_type('ImageMaskSeries', namespace='core')
+    ns_builder.include_type('TimeSeries', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -60,6 +62,28 @@ def main():
                 name='background',
                 doc='Computed background image.',
                 neurodata_type_inc='GrayscaleImage',
+            ),
+            NWBDatasetSpec(
+                name='roi',
+                doc='Region of interest in the raw depth video.',
+                neurodata_type_inc='GrayscaleImage',
+            ),
+        ],
+        groups=[
+            NWBGroupSpec(
+                name='flipped_series',
+                doc='Boolean array indicating whether the image was flipped left/right.',
+                neurodata_type_inc='TimeSeries',
+            ),
+            NWBGroupSpec(
+                name='processed_depth_video',
+                doc='Extracted depth video with aligned animal.',
+                neurodata_type_inc='DepthImageSeries',
+            ),
+            NWBGroupSpec(
+                name='loglikelihood_video',
+                doc='Log-likelihood that the animal was detected for each pixel.',
+                neurodata_type_inc='ImageMaskSeries',
             ),
         ],
         links=[
