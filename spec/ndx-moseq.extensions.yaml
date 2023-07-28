@@ -17,7 +17,7 @@ groups:
   datasets:
   - name: background
     neurodata_type_inc: GrayscaleImage
-    doc: Computed background image.
+    doc: Computed background image of the raw depth video.
   - name: roi
     neurodata_type_inc: GrayscaleImage
     doc: Region of interest in the raw depth video.
@@ -27,10 +27,34 @@ groups:
     doc: Boolean array indicating whether the image was flipped left/right.
   - name: processed_depth_video
     neurodata_type_inc: DepthImageSeries
-    doc: Extracted depth video with aligned animal.
+    doc: Extracted depth video with aligned subject.
   - name: loglikelihood_video
     neurodata_type_inc: ImageMaskSeries
-    doc: Log-likelihood that the animal was detected for each pixel.
+    doc: Log-likelihood that the subject was detected for each pixel.
+  - name: position
+    neurodata_type_inc: Position
+    doc: 3D Position (x, y, height) of the subject in the depth video.
+  - name: heading_2d
+    neurodata_type_inc: CompassDirection
+    doc: Overall orientation of the subject (head-side) in 2D (x, y).
+  - name: speed_2d
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: 2D (x, y) Speed of the subject in the depth video.
+  - name: speed_3d
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: 3D (x, y, height) Speed of the subject in the depth video.
+  - name: angular_velocity_2d
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: 2D (x, y) Angular velocity of the subject in the depth video.
+  - name: length
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: Length of the subject in the depth video.
+  - name: width
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: Width of the subject in the depth video.
+  - name: area
+    neurodata_type_inc: BehavioralTimeSeries
+    doc: Pixel-wise area of the subject in the depth video.
   links:
   - name: depth_camera
     target_type: Device

@@ -28,6 +28,9 @@ def main():
     ns_builder.include_type('Device', namespace='core')
     ns_builder.include_type('ImageMaskSeries', namespace='core')
     ns_builder.include_type('TimeSeries', namespace='core')
+    ns_builder.include_type('Position', namespace='core')
+    ns_builder.include_type('CompassDirection', namespace='core')
+    ns_builder.include_type('BehavioralTimeSeries', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -60,7 +63,7 @@ def main():
         datasets=[
             NWBDatasetSpec(
                 name='background',
-                doc='Computed background image.',
+                doc='Computed background image of the raw depth video.',
                 neurodata_type_inc='GrayscaleImage',
             ),
             NWBDatasetSpec(
@@ -77,13 +80,53 @@ def main():
             ),
             NWBGroupSpec(
                 name='processed_depth_video',
-                doc='Extracted depth video with aligned animal.',
+                doc='Extracted depth video with aligned subject.',
                 neurodata_type_inc='DepthImageSeries',
             ),
             NWBGroupSpec(
                 name='loglikelihood_video',
-                doc='Log-likelihood that the animal was detected for each pixel.',
+                doc='Log-likelihood that the subject was detected for each pixel.',
                 neurodata_type_inc='ImageMaskSeries',
+            ),
+            NWBGroupSpec(
+                name='position',
+                doc='3D Position (x, y, height) of the subject in the depth video.',
+                neurodata_type_inc='Position',
+            ),
+            NWBGroupSpec(
+                name='heading_2d',
+                doc="Overall orientation of the subject (head-side) in 2D (x, y).",
+                neurodata_type_inc='CompassDirection',
+            ),
+            NWBGroupSpec(
+                name='speed_2d',
+                doc='2D (x, y) Speed of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
+            ),
+            NWBGroupSpec(
+                name='speed_3d',
+                doc='3D (x, y, height) Speed of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
+            ),
+            NWBGroupSpec(
+                name='angular_velocity_2d',
+                doc='2D (x, y) Angular velocity of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
+            ),
+            NWBGroupSpec(
+                name='length',
+                doc='Length of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
+            ),
+            NWBGroupSpec(
+                name='width',
+                doc='Width of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
+            ),
+            NWBGroupSpec(
+                name='area',
+                doc='Pixel-wise area of the subject in the depth video.',
+                neurodata_type_inc='BehavioralTimeSeries',
             ),
         ],
         links=[

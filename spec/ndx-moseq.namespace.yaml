@@ -15,5 +15,8 @@ namespaces:
     - Device
     - ImageMaskSeries
     - TimeSeries
+    - Position
+    - CompassDirection
+    - BehavioralTimeSeries
   - source: ndx-moseq.extensions.yaml
   version: 0.1.0
