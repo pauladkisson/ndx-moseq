@@ -31,6 +31,7 @@ def main():
     ns_builder.include_type('Position', namespace='core')
     ns_builder.include_type('CompassDirection', namespace='core')
     ns_builder.include_type('BehavioralTimeSeries', namespace='core')
+    ns_builder.include_type('DynamicTable', namespace='core')
 
     # TODO: define your new data types
     # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
@@ -58,7 +59,7 @@ def main():
                 name='version',
                 doc='Version of moseq2-extract.',
                 dtype='text'
-            )
+            ),
         ],
         datasets=[
             NWBDatasetSpec(
@@ -73,6 +74,11 @@ def main():
             ),
         ],
         groups=[
+            NWBGroupSpec(
+                name='ParameterTable',
+                neurodata_type_inc='DynamicTable',
+                doc='An extension of DynamicTable that allows special treatment of tabular parameters.',
+            ),
             NWBGroupSpec(
                 name='flipped_series',
                 doc='Boolean array indicating whether the image was flipped left/right.',

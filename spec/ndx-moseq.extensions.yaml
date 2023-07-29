@@ -22,6 +22,9 @@ groups:
     neurodata_type_inc: GrayscaleImage
     doc: Region of interest in the raw depth video.
   groups:
+  - name: ParameterTable
+    neurodata_type_inc: DynamicTable
+    doc: An extension of DynamicTable that allows special treatment of tabular parameters.
   - name: flipped_series
     neurodata_type_inc: TimeSeries
     doc: Boolean array indicating whether the image was flipped left/right.

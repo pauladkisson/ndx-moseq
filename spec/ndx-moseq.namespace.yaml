@@ -18,5 +18,6 @@ namespaces:
     - Position
     - CompassDirection
     - BehavioralTimeSeries
+    - DynamicTable
   - source: ndx-moseq.extensions.yaml
   version: 0.1.0
