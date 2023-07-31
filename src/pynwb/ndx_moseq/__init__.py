@@ -25,3 +25,4 @@ load_namespaces(ndx_moseq_specpath)
 # them accessible at the package level
 DepthImageSeries = get_class('DepthImageSeries', 'ndx-moseq')
 MoSeqExtractGroup = get_class('MoSeqExtractGroup', 'ndx-moseq')
+MoSeqExtractParameterGroup = get_class('MoSeqExtractParameterGroup', 'ndx-moseq')
