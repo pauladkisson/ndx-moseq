@@ -30,7 +30,6 @@ def main():
     ns_builder.include_type('TimeSeries', namespace='core')
     ns_builder.include_type('Position', namespace='core')
     ns_builder.include_type('CompassDirection', namespace='core')
-    ns_builder.include_type('BehavioralTimeSeries', namespace='core')
     ns_builder.include_type('DynamicTable', namespace='core')
 
     # TODO: define your new data types
@@ -379,32 +378,32 @@ def main():
             NWBGroupSpec(
                 name='speed_2d',
                 doc='2D (x, y) Speed of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
             NWBGroupSpec(
                 name='speed_3d',
                 doc='3D (x, y, height) Speed of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
             NWBGroupSpec(
                 name='angular_velocity_2d',
                 doc='2D (x, y) Angular velocity of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
             NWBGroupSpec(
                 name='length',
                 doc='Length of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
             NWBGroupSpec(
                 name='width',
                 doc='Width of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
             NWBGroupSpec(
                 name='area',
                 doc='Pixel-wise area of the subject in the depth video.',
-                neurodata_type_inc='BehavioralTimeSeries',
+                neurodata_type_inc='TimeSeries',
             ),
         ],
         links=[
