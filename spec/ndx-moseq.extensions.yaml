@@ -206,22 +206,22 @@ groups:
     neurodata_type_inc: CompassDirection
     doc: Overall orientation of the subject (head-side) in 2D (x, y).
   - name: speed_2d
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: 2D (x, y) Speed of the subject in the depth video.
   - name: speed_3d
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: 3D (x, y, height) Speed of the subject in the depth video.
   - name: angular_velocity_2d
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: 2D (x, y) Angular velocity of the subject in the depth video.
   - name: length
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: Length of the subject in the depth video.
   - name: width
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: Width of the subject in the depth video.
   - name: area
-    neurodata_type_inc: BehavioralTimeSeries
+    neurodata_type_inc: TimeSeries
     doc: Pixel-wise area of the subject in the depth video.
   links:
   - name: depth_camera
