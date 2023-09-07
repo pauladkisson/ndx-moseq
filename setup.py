@@ -21,7 +21,7 @@ except Exception:
     readme = ""
 
 setup_args = {
-    'name': 'ndx-moseq',
+    'name': 'ndx-depth-moseq',
     'version': '0.1.0',
     'description': 'Extension for MoSeq-extract output',
     'long_description': readme,
@@ -36,9 +36,9 @@ setup_args = {
     ],
     'packages': find_packages('src/pynwb', exclude=["tests", "tests.*"]),
     'package_dir': {'': 'src/pynwb'},
-    'package_data': {'ndx_moseq': [
-        'spec/ndx-moseq.namespace.yaml',
-        'spec/ndx-moseq.extensions.yaml',
+    'package_data': {'ndx_depth_moseq': [
+        'spec/ndx-depth-moseq.namespace.yaml',
+        'spec/ndx-depth-moseq.extensions.yaml',
     ]},
     'classifiers': [
         "Intended Audience :: Developers",
@@ -56,10 +56,10 @@ setup_args = {
 
 
 def _copy_spec_files(project_dir):
-    ns_path = os.path.join(project_dir, 'spec', 'ndx-moseq.namespace.yaml')
-    ext_path = os.path.join(project_dir, 'spec', 'ndx-moseq.extensions.yaml')
+    ns_path = os.path.join(project_dir, 'spec', 'ndx-depth-moseq.namespace.yaml')
+    ext_path = os.path.join(project_dir, 'spec', 'ndx-depth-moseq.extensions.yaml')
 
-    dst_dir = os.path.join(project_dir, 'src', 'pynwb', 'ndx_moseq', 'spec')
+    dst_dir = os.path.join(project_dir, 'src', 'pynwb', 'ndx_depth_moseq', 'spec')
     if not os.path.exists(dst_dir):
         os.mkdir(dst_dir)
 

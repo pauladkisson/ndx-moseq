@@ -5,7 +5,7 @@ from pynwb import load_namespaces, get_class
 ndx_moseq_specpath = os.path.join(
     os.path.dirname(__file__),
     'spec',
-    'ndx-moseq.namespace.yaml'
+    'ndx-depth-moseq.namespace.yaml'
 )
 
 # If the extension has not been installed yet but we are running directly from
@@ -15,7 +15,7 @@ if not os.path.exists(ndx_moseq_specpath):
         os.path.dirname(__file__),
         '..', '..', '..',
         'spec',
-        'ndx-moseq.namespace.yaml'
+        'ndx-depth-moseq.namespace.yaml'
     ))
 
 # Load the namespace
@@ -23,6 +23,6 @@ load_namespaces(ndx_moseq_specpath)
 
 # TODO: import your classes here or define your class using get_class to make
 # them accessible at the package level
-DepthImageSeries = get_class('DepthImageSeries', 'ndx-moseq')
-MoSeqExtractGroup = get_class('MoSeqExtractGroup', 'ndx-moseq')
-MoSeqExtractParameterGroup = get_class('MoSeqExtractParameterGroup', 'ndx-moseq')
+DepthImageSeries = get_class('DepthImageSeries', 'ndx-depth-moseq')
+MoSeqExtractGroup = get_class('MoSeqExtractGroup', 'ndx-depth-moseq')
+MoSeqExtractParameterGroup = get_class('MoSeqExtractParameterGroup', 'ndx-depth-moseq')
