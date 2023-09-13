@@ -22,7 +22,7 @@ except Exception:
 
 setup_args = {
     'name': 'ndx-depth-moseq',
-    'version': '0.1.0',
+    'version': '0.1.1',
     'description': 'Extension for MoSeq-extract output',
     'long_description': readme,
     'long_description_content_type': readme_type,
