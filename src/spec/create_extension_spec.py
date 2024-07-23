@@ -12,7 +12,7 @@ def main():
         doc="""Extension for MoSeq-extract output""",
         name="""ndx-depth-moseq""",
         version="""0.1.0""",
-        author=list(map(str.strip, """Adkisson, Paul""".split(','))),
+        author=list(map(str.strip, """Paul Adkisson""".split(','))),
         contact=list(map(str.strip, """paul.wesley.adkisson@gmail.com""".split(',')))
     )
 
