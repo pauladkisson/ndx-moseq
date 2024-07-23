@@ -1,7 +1,6 @@
 namespaces:
 - author:
-  - Adkisson
-  - Paul
+  - Paul Adkisson
   contact:
   - paul.wesley.adkisson@gmail.com
   doc: Extension for MoSeq-extract output
