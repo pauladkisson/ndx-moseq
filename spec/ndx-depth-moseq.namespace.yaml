@@ -1,7 +1,6 @@
 namespaces:
 - author:
-  - Adkisson
-  - Paul
+  - Paul Adkisson
   contact:
   - paul.wesley.adkisson@gmail.com
   doc: Extension for MoSeq-extract output
@@ -19,4 +18,4 @@ namespaces:
     - CompassDirection
     - DynamicTable
   - source: ndx-depth-moseq.extensions.yaml
-  version: 0.1.0
+  version: 0.1.2
