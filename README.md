@@ -9,7 +9,9 @@ This extension consists of 3 new neurodata types:
 - `MoSeqExtractGroup`, which stores all the relevant depth-moseq outputs including the `DepthImageSeries`, `MoSeqExtractParameterGroup`, as well as various native neurodata types such as the `Position`.
 
 ## Installation
-TODO: Publish in PyPI
+```
+pip install ndx-depth-moseq
+```
 
 ## Usage
 
